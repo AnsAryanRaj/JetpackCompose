@@ -30,16 +30,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-
 @Composable
 fun CardExample() {
 
-    Column(modifier = Modifier.fillMaxSize(),
+    Column(
+        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center) {
+        verticalArrangement = Arrangement.Center
+    ) {
 
         Card(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             shape = CircleShape,
             colors = CardDefaults.cardColors(
 //                containerColor = Color(0xFFE3F2FD)
@@ -47,15 +50,15 @@ fun CardExample() {
                 containerColor = Color.Blue,
                 contentColor = Color.White
             ),
-            elevation= CardDefaults.cardElevation(
+            elevation = CardDefaults.cardElevation(
                 defaultElevation = 50.dp
             ),
-            border = BorderStroke(width = 2.dp, color=Color.Green)
+            border = BorderStroke(width = 2.dp, color = Color.Green)
 
-        ){
+        ) {
 
             Text(
-                text="This is a card!",
+                text = "This is a card!",
                 fontSize = 20.sp,
                 modifier = Modifier.padding(16.dp)
             )
@@ -68,56 +71,66 @@ fun CardExample() {
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun CardExample2(){
+fun CardExample2() {
 
-    Column(modifier = Modifier.fillMaxSize(),
+    Column(
+        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Card(modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp),
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             shape = RoundedCornerShape(16.dp),
             colors = CardDefaults.cardColors(
                 containerColor = Color.White
             ),
-            elevation = CardDefaults.cardElevation())
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 6.dp
+            )
+        )
         {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(12.dp),
                 verticalAlignment = Alignment.CenterVertically
-            ){
+            ) {
 
                 Box(
                     modifier = Modifier
                         .size(100.dp)
                         .background(
-                            color=Color.LightGray,
+                            color = Color.LightGray,
                             shape = CircleShape
                         ),
                     contentAlignment = Alignment.Center
                 ) {
-                    Icon(imageVector = Icons.Default.Person,
+                    Icon(
+                        imageVector = Icons.Default.Person,
                         contentDescription = "Profile Pictue",
                         modifier = Modifier.size(50.dp),
-                        tint=Color.Gray
+                        tint = Color.Gray
                     )
                 }
                 Spacer(modifier = Modifier.width(12.dp))
 
                 Column() {
-                    Text(text="Neat Roots",
+                    Text(
+                        text = "User Profile",
                         fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold)
+                        fontWeight = FontWeight.Bold
+                    )
 
                     Spacer(modifier = Modifier.height(6.dp))
 
-                    Text(text="The most subscribed youtube channel for App Development!",
+                    Text(
+                        text = "This is the welcome page of the app , Welcome to first user interaction",
                         fontSize = 12.sp,
 
-                        color=Color.DarkGray)
+                        color = Color.DarkGray
+                    )
                 }
 
             }
