@@ -246,13 +246,13 @@ fun IconButtonExample() {
         Icon(
             imageVector = Icons.Default.Home,
             contentDescription = "Go to Home",
-            modifier = Modifier.clickable{ }
+            modifier = Modifier.clickable { }
         )
 
         Icon(
             imageVector = Icons.Default.Home,
             contentDescription = "Go to Home",
-            modifier = Modifier.clickable{ }
+            modifier = Modifier.clickable { }
         )
     }
 }
