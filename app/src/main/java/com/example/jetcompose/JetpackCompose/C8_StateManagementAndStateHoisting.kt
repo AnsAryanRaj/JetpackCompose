@@ -14,18 +14,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 
 
 @Composable
-fun StateManagementExample(){
+fun StateManagementExample() {
 
     //remember keeps this value during recomposition
     //mutableStateOf holds a value that can change
@@ -57,7 +56,7 @@ fun StateManagementExample(){
             Button(
                 onClick = { score-- },
                 modifier = Modifier.weight(1f),
-                enabled = score >0
+                enabled = score > 0
             ) {
                 Text("Decrease")
             }
@@ -67,11 +66,11 @@ fun StateManagementExample(){
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun RememberSaveableExample(){
+fun RememberSaveableExample() {
 
 
 //rememberSaveable saves the state during configuration changes
-    var score by rememberSaveable{ mutableStateOf(7) }
+    var score by rememberSaveable { mutableStateOf(7) }
 
     Column(
         modifier = Modifier
@@ -97,7 +96,7 @@ fun RememberSaveableExample(){
             Button(
                 onClick = { score-- },
                 modifier = Modifier.weight(1f),
-                enabled = score >0
+                enabled = score > 0
             ) {
                 Text("Decrease")
             }
@@ -108,24 +107,25 @@ fun RememberSaveableExample(){
 }
 
 @Composable
-fun StateHoistingParent(){
+fun StateHoistingParent() {
 
     var score by remember { mutableStateOf(0) }
 
     CounterChild(
-        score =score ,
-        increment= { score++},
-        decrement={ score--}
+        score = score,
+        increment = { score++ },
+        decrement = { score-- }
 
     )
 
 }
 
 @Composable
-fun CounterChild( score: Int,
-                  increment: ()-> Unit,
-                  decrement: ()-> Unit){
-
+fun CounterChild(
+    score: Int,
+    increment: () -> Unit,
+    decrement: () -> Unit
+) {
 
 
     Column(
@@ -150,9 +150,9 @@ fun CounterChild( score: Int,
             Spacer(modifier = Modifier.width(8.dp))
 
             Button(
-                onClick = { decrement},
+                onClick = { decrement },
                 modifier = Modifier.weight(1f),
-                enabled = score >0
+                enabled = score > 0
             ) {
                 Text("Decrease")
             }
