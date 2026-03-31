@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.example.jetcompose.JetpackCompose.CardExample2
+import com.example.jetcompose.JetpackCompose.RememberSaveableExample
+import com.example.jetcompose.JetpackCompose.StateManagementExample
 import com.example.jetcompose.ui.theme.JetComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -14,8 +16,8 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             JetComposeTheme {
+                RememberSaveableExample()
 
-                CardExample2()
             }
         }
     }
