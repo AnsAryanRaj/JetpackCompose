@@ -7,7 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import com.example.jetcompose.JetpackCompose.CardExample2
 import com.example.jetcompose.JetpackCompose.RememberSaveableExample
 import com.example.jetcompose.JetpackCompose.StateManagementExample
+import com.example.jetcompose.JetpackCompose.c10_navigation.LoginScreenUI
 import com.example.jetcompose.ui.theme.JetComposeTheme
+import com.example.jetpackcomposemissionandroid.jetpackcompose.AlertDialogExample
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +18,9 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             JetComposeTheme {
-                RememberSaveableExample()
+
+                LoginScreenUI()
+
 
             }
         }
