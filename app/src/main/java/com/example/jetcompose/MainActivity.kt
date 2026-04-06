@@ -9,6 +9,7 @@ import com.example.jetcompose.JetpackCompose.NestedLazyExample
 import com.example.jetcompose.JetpackCompose.TypesOfItem
 import com.example.jetcompose.JetpackCompose.c10_navigation.LoginScreenUI
 import com.example.jetcompose.ui.theme.JetComposeTheme
+import com.example.jetpackcomposemissionandroid.jetpackcompose.c12_scaffold.MyScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +19,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetComposeTheme {
 
-                TypesOfItem()
+
+                MyScreen()
 
 
 

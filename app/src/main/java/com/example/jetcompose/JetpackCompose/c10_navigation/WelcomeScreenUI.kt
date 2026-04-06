@@ -1,4 +1,4 @@
-package com.example.jetpackcomposemissionandroid.jetpackcompose.c10_navigation
+package com.example.jetcompose.JetpackCompose.c10_navigation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,19 +19,20 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.jetcompose.JetpackCompose.c10_navigation.MyNavRoutes
 
 @Composable
-fun HomeScreenUI(navController: NavHostController) {
+fun WelcomeScreenUI(userName: String, navController: NavHostController) {
 
     Column(
-        modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
 
         Text(
-            text = "Home Screen",
+            text = "Welcome $userName!",
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold
         )

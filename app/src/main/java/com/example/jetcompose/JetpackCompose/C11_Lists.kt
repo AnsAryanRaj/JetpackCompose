@@ -158,6 +158,7 @@ fun TypesOfItem() {
 
         LazyColumn() {
 
+
             items(names) { name ->
                 Text(name)
             }
